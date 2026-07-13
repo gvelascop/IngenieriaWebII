@@ -18,6 +18,90 @@ header{
     box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
+.card-img-top{
+    height:200px;
+    object-fit:cover;
+}
+
+/* Banner degradé para eventos sin foto */
+.card-banner{
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:3.5rem;
+}
+
+.banner-musica{ background:linear-gradient(135deg,#6610f2,#0d6efd); }
+.banner-tecnologia{ background:linear-gradient(135deg,#0dcaf0,#0d6efd); }
+.banner-educacion{ background:linear-gradient(135deg,#6c757d,#495057); }
+
+.card-meta{
+    font-size:.85rem;
+}
+
+/* Sección de estadísticas */
+.stats-section{
+    background:#f8f9fa;
+    border-bottom:1px solid #e9ecef;
+}
+
+.stat-number{
+    font-size:2rem;
+    font-weight:800;
+    color:#0d6efd;
+    line-height:1;
+}
+
+.stat-label{
+    color:#6c757d;
+    font-size:.95rem;
+    margin-top:4px;
+}
+
+/* Testimonios */
+.testimonios-section{
+    background:#f8f9fa;
+}
+
+.testimonio-card{
+    background:#fff;
+    border-radius:14px;
+}
+
+.avatar-circle{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    flex-shrink:0;
+}
+
+/* Botones de categoría */
+.category-btn{
+    transition:.25s;
+    border-radius:12px;
+}
+
+.category-btn:hover{
+    transform:translateY(-4px);
+}
+
+.category-btn.active{
+    box-shadow:0 6px 14px rgba(13,110,253,.35);
+}
+
+/* Resaltado del link activo en el navbar */
+.navbar-nav .nav-link.active{
+    font-weight:700;
+    text-decoration:underline;
+    text-underline-offset:6px;
+}
+
 footer{
     margin-top:40px;
 }

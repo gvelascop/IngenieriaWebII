@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EventHub - Plataforma digital de gestión y promoción de eventos: conciertos, conferencias, talleres y festivales.">
     <title>EventHub</title>
 
     <!-- Bootstrap -->
@@ -16,20 +17,21 @@
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">🎉 EventHub</a>
+            <a class="navbar-brand fw-bold" href="#inicio">🎉 EventHub</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                aria-controls="menu" aria-expanded="false" aria-label="Abrir menú de navegación">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="menu">
 
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto" id="navLinks">
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Inicio</a>
+                        <a class="nav-link" href="#inicio">Inicio</a>
                     </li>
 
                     <li class="nav-item">
@@ -38,6 +40,10 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="#categorias">Categorías</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
                     </li>
 
                     <li class="nav-item">
@@ -53,7 +59,7 @@
 
     <!-- BANNER -->
 
-    <header class="bg-dark text-white text-center p-5">
+    <header class="bg-dark text-white text-center p-5" id="inicio">
 
         <div class="container">
 
@@ -73,35 +79,73 @@
 
     </header>
 
+    <!-- ESTADÍSTICAS -->
+
+    <section class="stats-section py-4">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">+120</div>
+                    <div class="stat-label">Eventos publicados</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">+15K</div>
+                    <div class="stat-label">Asistentes</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Categorías</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-number">+40</div>
+                    <div class="stat-label">Organizadores aliados</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- EVENTOS -->
 
     <section class="container py-5" id="eventos">
 
-        <h2 class="text-center mb-5">
+        <h2 class="text-center mb-2">
             Eventos Destacados
         </h2>
 
-        <div class="row g-4">
+        <p class="text-center text-muted mb-5">
+            Explorá nuestra selección de eventos y encontrá el próximo plan ideal para vos.
+        </p>
+
+        <div class="row g-4" id="eventsRow">
 
             <!-- Evento 1 -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 event-item" data-category="musica">
 
                 <div class="card shadow h-100">
 
-                    <img src="./img/best-music-festivals-in-europe-aspect-ratio-750-550.jpg" class="card-img-top">
+                    <div class="position-relative">
+                        <img src="./img/best-music-festivals-in-europe-aspect-ratio-750-550.jpg" class="card-img-top"
+                            alt="Festival de música con multitud y escenario iluminado">
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">Música</span>
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Desde $80.000</span>
+                    </div>
 
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
 
                         <h5 class="card-title">
                             Festival de Música
                         </h5>
 
+                        <p class="card-meta text-muted small mb-2">
+                            📅 20 de septiembre &nbsp;·&nbsp; 📍 Parque Simón Bolívar, Bogotá
+                        </p>
+
                         <p class="card-text">
                             Vive una experiencia inolvidable con artistas nacionales e internacionales.
                         </p>
 
-                        <a href="#" class="btn btn-primary">
+                        <a href="#" class="btn btn-primary mt-auto">
                             Más información
                         </a>
 
@@ -113,24 +157,32 @@
 
             <!-- Evento 2 -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 event-item" data-category="musica">
 
                 <div class="card shadow h-100">
 
-                    <img src="./img/rise-conference-1024x683.jpg" class="card-img-top">
+                    <div class="position-relative">
+                        <div class="card-banner banner-musica">🎷</div>
+                        <span class="badge bg-primary position-absolute top-0 start-0 m-2">Música</span>
+                        <span class="badge bg-success position-absolute top-0 end-0 m-2">Gratis</span>
+                    </div>
 
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
 
                         <h5 class="card-title">
-                            Conferencia de Tecnología
+                            Noche de Jazz Acústico
                         </h5>
 
-                        <p class="card-text">
-                            Aprende sobre Inteligencia Artificial, programación y transformación digital.
+                        <p class="card-meta text-muted small mb-2">
+                            📅 4 de octubre &nbsp;·&nbsp; 📍 Teatro Municipal
                         </p>
 
-                        <a href="#" class="btn btn-success">
-                            Inscribirse
+                        <p class="card-text">
+                            Una velada íntima con bandas locales de jazz en un espacio al aire libre.
+                        </p>
+
+                        <a href="#" class="btn btn-primary mt-auto">
+                            Más información
                         </a>
 
                     </div>
@@ -141,23 +193,105 @@
 
             <!-- Evento 3 -->
 
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 event-item" data-category="tecnologia">
 
                 <div class="card shadow h-100">
 
-                    <img src="./img/images.jfif" class="card-img-top">
+                    <div class="position-relative">
+                        <img src="./img/rise-conference-1024x683.jpg" class="card-img-top"
+                            alt="Auditorio de conferencia de tecnología con público">
+                        <span class="badge bg-info text-dark position-absolute top-0 start-0 m-2">Tecnología</span>
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Desde $120.000</span>
+                    </div>
 
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column">
+
+                        <h5 class="card-title">
+                            Conferencia de Tecnología
+                        </h5>
+
+                        <p class="card-meta text-muted small mb-2">
+                            📅 12 de octubre &nbsp;·&nbsp; 📍 Centro de Convenciones
+                        </p>
+
+                        <p class="card-text">
+                            Aprende sobre Inteligencia Artificial, programación y transformación digital.
+                        </p>
+
+                        <a href="#" class="btn btn-success mt-auto">
+                            Inscribirse
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Evento 4 -->
+
+            <div class="col-md-6 col-lg-4 event-item" data-category="tecnologia">
+
+                <div class="card shadow h-100">
+
+                    <div class="position-relative">
+                        <div class="card-banner banner-tecnologia">💻</div>
+                        <span class="badge bg-info text-dark position-absolute top-0 start-0 m-2">Tecnología</span>
+                        <span class="badge bg-success position-absolute top-0 end-0 m-2">Gratis</span>
+                    </div>
+
+                    <div class="card-body d-flex flex-column">
+
+                        <h5 class="card-title">
+                            Hackathon de Innovación
+                        </h5>
+
+                        <p class="card-meta text-muted small mb-2">
+                            📅 25 de octubre &nbsp;·&nbsp; 📍 Campus Universitario
+                        </p>
+
+                        <p class="card-text">
+                            48 horas de programación en equipo para resolver retos reales con tecnología.
+                        </p>
+
+                        <a href="#" class="btn btn-success mt-auto">
+                            Inscribirse
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Evento 5 -->
+
+            <div class="col-md-6 col-lg-4 event-item" data-category="arte">
+
+                <div class="card shadow h-100">
+
+                    <div class="position-relative">
+                        <img src="./img/images.jfif" class="card-img-top"
+                            alt="Cámara fotográfica utilizada en taller de fotografía">
+                        <span class="badge bg-danger position-absolute top-0 start-0 m-2">Arte</span>
+                        <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Desde $60.000</span>
+                    </div>
+
+                    <div class="card-body d-flex flex-column">
 
                         <h5 class="card-title">
                             Taller de Fotografía
                         </h5>
 
+                        <p class="card-meta text-muted small mb-2">
+                            📅 8 de noviembre &nbsp;·&nbsp; 📍 Sala Cultural Norte
+                        </p>
+
                         <p class="card-text">
                             Aprende técnicas profesionales para capturar imágenes sorprendentes.
                         </p>
 
-                        <a href="#" class="btn btn-danger">
+                        <a href="#" class="btn btn-danger mt-auto">
                             Reservar Cupo
                         </a>
 
@@ -167,7 +301,48 @@
 
             </div>
 
+            <!-- Evento 6 -->
+
+            <div class="col-md-6 col-lg-4 event-item" data-category="educacion">
+
+                <div class="card shadow h-100">
+
+                    <div class="position-relative">
+                        <div class="card-banner banner-educacion">📚</div>
+                        <span class="badge bg-secondary position-absolute top-0 start-0 m-2">Educación</span>
+                        <span class="badge bg-success position-absolute top-0 end-0 m-2">Gratis</span>
+                    </div>
+
+                    <div class="card-body d-flex flex-column">
+
+                        <h5 class="card-title">
+                            Feria del Libro y la Lectura
+                        </h5>
+
+                        <p class="card-meta text-muted small mb-2">
+                            📅 15 de noviembre &nbsp;·&nbsp; 📍 Biblioteca Pública Central
+                        </p>
+
+                        <p class="card-text">
+                            Charlas con autores, talleres de escritura y venta de libros a precios especiales.
+                        </p>
+
+                        <a href="#" class="btn btn-secondary mt-auto">
+                            Más información
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
+
+        <p class="text-center text-muted mt-4 d-none" id="noResults">
+            Todavía no hay eventos publicados en esta categoría. ¡Muy pronto habrá novedades! 🚀
+        </p>
 
     </section>
 
@@ -181,42 +356,139 @@
                 Categorías
             </h2>
 
-            <div class="row text-center">
+            <p class="text-center text-muted mb-4">
+                Hacé clic en una categoría para filtrar los eventos destacados.
+            </p>
 
-                <div class="col-md-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-apple-music" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="m10.995 0 .573.001q.241 0 .483.007c.35.01.705.03 1.051.093.352.063.68.166.999.329a3.36 3.36 0 0 1 1.47 1.468c.162.32.265.648.328 1 .063.347.084.7.093 1.051q.007.241.007.483l.001.573v5.99l-.001.573q0 .241-.008.483c-.01.35-.03.704-.092 1.05a3.5 3.5 0 0 1-.33 1 3.36 3.36 0 0 1-1.468 1.468 3.5 3.5 0 0 1-1 .33 7 7 0 0 1-1.05.092q-.241.007-.483.008l-.573.001h-5.99l-.573-.001q-.241 0-.483-.008a7 7 0 0 1-1.052-.092 3.6 3.6 0 0 1-.998-.33 3.36 3.36 0 0 1-1.47-1.468 3.6 3.6 0 0 1-.328-1 7 7 0 0 1-.093-1.05Q.002 11.81 0 11.568V5.005l.001-.573q0-.241.007-.483c.01-.35.03-.704.093-1.05a3.6 3.6 0 0 1 .329-1A3.36 3.36 0 0 1 1.9.431 3.5 3.5 0 0 1 2.896.1 7 7 0 0 1 3.95.008Q4.19.002 4.432 0h.573zm-.107 2.518-4.756.959H6.13a.66.66 0 0 0-.296.133.5.5 0 0 0-.16.31c-.004.027-.01.08-.01.16v5.952c0 .14-.012.275-.106.39-.095.115-.21.15-.347.177l-.31.063c-.393.08-.65.133-.881.223a1.4 1.4 0 0 0-.519.333 1.25 1.25 0 0 0-.332.995c.031.297.166.582.395.792.156.142.35.25.578.296.236.047.49.031.858-.043.196-.04.38-.102.555-.205a1.4 1.4 0 0 0 .438-.405 1.5 1.5 0 0 0 .233-.55c.042-.202.052-.386.052-.588V6.347c0-.276.08-.35.302-.404.024-.005 3.954-.797 4.138-.833.257-.049.378.025.378.294v3.524c0 .14-.001.28-.096.396-.094.115-.211.15-.348.178l-.31.062c-.393.08-.649.133-.88.223a1.4 1.4 0 0 0-.52.334 1.26 1.26 0 0 0-.34.994c.03.297.174.582.404.792a1.2 1.2 0 0 0 .577.294c.237.048.49.03.858-.044.197-.04.381-.098.556-.202a1.4 1.4 0 0 0 .438-.405q.173-.252.233-.549a2.7 2.7 0 0 0 .044-.589V2.865c0-.273-.143-.443-.4-.42-.04.003-.383.064-.424.073" />
-                    </svg>
-                    <h5>Música</h5>
+            <div class="row text-center g-3" id="categoryButtons">
+
+                <div class="col-6 col-md-3">
+                    <button type="button" class="btn btn-outline-primary category-btn w-100 py-3"
+                        data-filter="musica" aria-pressed="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-apple-music mb-2" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="m10.995 0 .573.001q.241 0 .483.007c.35.01.705.03 1.051.093.352.063.68.166.999.329a3.36 3.36 0 0 1 1.47 1.468c.162.32.265.648.328 1 .063.347.084.7.093 1.051q.007.241.007.483l.001.573v5.99l-.001.573q0 .241-.008.483c-.01.35-.03.704-.092 1.05a3.5 3.5 0 0 1-.33 1 3.36 3.36 0 0 1-1.468 1.468 3.5 3.5 0 0 1-1 .33 7 7 0 0 1-1.05.092q-.241.007-.483.008l-.573.001h-5.99l-.573-.001q-.241 0-.483-.008a7 7 0 0 1-1.052-.092 3.6 3.6 0 0 1-.998-.33 3.36 3.36 0 0 1-1.47-1.468 3.6 3.6 0 0 1-.328-1 7 7 0 0 1-.093-1.05Q.002 11.81 0 11.568V5.005l.001-.573q0-.241.007-.483c.01-.35.03-.704.093-1.05a3.6 3.6 0 0 1 .329-1A3.36 3.36 0 0 1 1.9.431 3.5 3.5 0 0 1 2.896.1 7 7 0 0 1 3.95.008Q4.19.002 4.432 0h.573zm-.107 2.518-4.756.959H6.13a.66.66 0 0 0-.296.133.5.5 0 0 0-.16.31c-.004.027-.01.08-.01.16v5.952c0 .14-.012.275-.106.39-.095.115-.21.15-.347.177l-.31.063c-.393.08-.65.133-.881.223a1.4 1.4 0 0 0-.519.333 1.25 1.25 0 0 0-.332.995c.031.297.166.582.395.792.156.142.35.25.578.296.236.047.49.031.858-.043.196-.04.38-.102.555-.205a1.4 1.4 0 0 0 .438-.405 1.5 1.5 0 0 0 .233-.55c.042-.202.052-.386.052-.588V6.347c0-.276.08-.35.302-.404.024-.005 3.954-.797 4.138-.833.257-.049.378.025.378.294v3.524c0 .14-.001.28-.096.396-.094.115-.211.15-.348.178l-.31.062c-.393.08-.649.133-.88.223a1.4 1.4 0 0 0-.52.334 1.26 1.26 0 0 0-.34.994c.03.297.174.582.404.792a1.2 1.2 0 0 0 .577.294c.237.048.49.03.858-.044.197-.04.381-.098.556-.202a1.4 1.4 0 0 0 .438-.405q.173-.252.233-.549a2.7 2.7 0 0 0 .044-.589V2.865c0-.273-.143-.443-.4-.42-.04.003-.383.064-.424.073" />
+                        </svg>
+                        <span class="d-block">Música</span>
+                    </button>
                 </div>
 
-                <div class="col-md-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-pc-display-horizontal" viewBox="0 0 16 16">
-                        <path
-                            d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25" />
-                    </svg>
-                    <h5>Tecnología</h5>
+                <div class="col-6 col-md-3">
+                    <button type="button" class="btn btn-outline-primary category-btn w-100 py-3"
+                        data-filter="tecnologia" aria-pressed="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-pc-display-horizontal mb-2" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5M12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0m2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0M1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1M1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25" />
+                        </svg>
+                        <span class="d-block">Tecnología</span>
+                    </button>
                 </div>
 
-                <div class="col-md-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-brush" viewBox="0 0 16 16">
-                        <path
-                            d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z" />
-                    </svg>
-                    <h5>Arte</h5>
+                <div class="col-6 col-md-3">
+                    <button type="button" class="btn btn-outline-primary category-btn w-100 py-3"
+                        data-filter="arte" aria-pressed="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-brush mb-2" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.1 6.1 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.1 8.1 0 0 1-3.078.132 4 4 0 0 1-.562-.135 1.4 1.4 0 0 1-.466-.247.7.7 0 0 1-.204-.288.62.62 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896q.19.012.348.048c.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04M4.705 11.912a1.2 1.2 0 0 0-.419-.1c-.246-.013-.573.05-.879.479-.197.275-.355.532-.5.777l-.105.177c-.106.181-.213.362-.32.528a3.4 3.4 0 0 1-.76.861c.69.112 1.736.111 2.657-.12.559-.139.843-.569.993-1.06a3 3 0 0 0 .126-.75zm1.44.026c.12-.04.277-.1.458-.183a5.1 5.1 0 0 0 1.535-1.1c1.9-1.996 4.412-5.57 6.052-8.631-2.59 1.927-5.566 4.66-7.302 6.792-.442.543-.795 1.243-1.042 1.826-.121.288-.214.54-.275.72v.001l.575.575zm-4.973 3.04.007-.005zm3.582-3.043.002.001h-.002z" />
+                        </svg>
+                        <span class="d-block">Arte</span>
+                    </button>
                 </div>
 
-                <div class="col-md-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                        class="bi bi-book" viewBox="0 0 16 16">
-                        <path
-                            d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
-                    </svg>
-                    <h5>Educación</h5>
+                <div class="col-6 col-md-3">
+                    <button type="button" class="btn btn-outline-primary category-btn w-100 py-3"
+                        data-filter="educacion" aria-pressed="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-book mb-2" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
+                        </svg>
+                        <span class="d-block">Educación</span>
+                    </button>
+                </div>
+
+                <div class="col-6 col-md-3">
+                    <button type="button" class="btn btn-outline-primary category-btn w-100 py-3"
+                        data-filter="deportes" aria-pressed="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                            class="bi bi-trophy mb-2" viewBox="0 0 16 16" aria-hidden="true">
+                            <path
+                                d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33 33 0 0 1 2.5.5m.099 2.54a2 2 0 0 0 .01 3.83A9 9 0 0 1 2.5 5c0-.588.01-1.15.03-1.696l.056-.264ZM13.4 3.043l.055.264A9 9 0 0 1 13.5 5q0 .223-.011.443a2 2 0 0 0 .011-3.83z" />
+                        </svg>
+                        <span class="d-block">Deportes</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TESTIMONIOS -->
+
+    <section class="py-5 testimonios-section" id="testimonios">
+
+        <div class="container">
+
+            <h2 class="text-center mb-5">
+                Lo que dicen nuestros asistentes
+            </h2>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 testimonio-card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                "Encontré el festival de música perfecto para el fin de semana. La página es súper fácil de usar."
+                            </p>
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="avatar-circle bg-primary">M</div>
+                                <div class="ms-2">
+                                    <strong class="d-block">Mariana G.</strong>
+                                    <small class="text-muted">Asistente frecuente</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 testimonio-card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                "Gracias al filtro por categorías encontré el hackathon en dos clics. Muy recomendado."
+                            </p>
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="avatar-circle bg-success">J</div>
+                                <div class="ms-2">
+                                    <strong class="d-block">Juan P.</strong>
+                                    <small class="text-muted">Desarrollador</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 testimonio-card">
+                        <div class="card-body">
+                            <p class="card-text">
+                                "Organizo talleres de arte y EventHub me ayudó a llegar a mucha más gente."
+                            </p>
+                            <div class="d-flex align-items-center mt-3">
+                                <div class="avatar-circle bg-danger">L</div>
+                                <div class="ms-2">
+                                    <strong class="d-block">Laura R.</strong>
+                                    <small class="text-muted">Organizadora de eventos</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -233,41 +505,48 @@
             Contáctanos
         </h2>
 
-        <form>
+        <form id="contactForm" class="needs-validation" novalidate>
 
             <div class="mb-3">
 
-                <label class="form-label">
+                <label for="nombre" class="form-label">
                     Nombre
                 </label>
 
-                <input type="text" class="form-control">
+                <input type="text" id="nombre" name="nombre" class="form-control" required minlength="2">
+                <div class="invalid-feedback">Por favor ingresá tu nombre.</div>
 
             </div>
 
             <div class="mb-3">
 
-                <label class="form-label">
+                <label for="correo" class="form-label">
                     Correo electrónico
                 </label>
 
-                <input type="email" class="form-control">
+                <input type="email" id="correo" name="correo" class="form-control" required>
+                <div class="invalid-feedback">Ingresá un correo electrónico válido.</div>
 
             </div>
 
             <div class="mb-3">
 
-                <label class="form-label">
+                <label for="mensaje" class="form-label">
                     Mensaje
                 </label>
 
-                <textarea class="form-control" rows="5"></textarea>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required minlength="10"></textarea>
+                <div class="invalid-feedback">El mensaje debe tener al menos 10 caracteres.</div>
 
             </div>
 
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" type="submit">
                 Enviar
             </button>
+
+            <div class="alert alert-success mt-3 d-none" id="formSuccess" role="alert">
+                ¡Gracias! Tu mensaje fue enviado correctamente.
+            </div>
 
         </form>
 
@@ -284,6 +563,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
